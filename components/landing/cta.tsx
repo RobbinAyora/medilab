@@ -24,7 +24,7 @@ export function CTA() {
               Ready to Transform Your Facility?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 text-pretty">
-              MedPlusTibaflow is designed for hospitals, clinics, and healthcare
+              Tibaflow is designed for hospitals, clinics, and healthcare
               facilities of all sizes. Whether you are a small clinic or a large
               hospital, our platform scales to meet your needs.
             </p>

@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'MedPlusTibaflow - Hospital Management System',
+  title: 'Tibaflow - Hospital Management System',
   description: 'Complete Digital Transformation for Modern Healthcare Facilities. Enterprise-grade hospital management system designed to digitize and streamline every aspect of your healthcare facility operations.',
   generator: 'v0.app',
   icons: {

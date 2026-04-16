@@ -69,7 +69,7 @@ export function Hero() {
           <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-2xl shadow-primary/10">
             <Image
               src="/images/dashboard-preview.jpg"
-              alt="MedPlusTibaflow Dashboard Preview"
+              alt="Tibaflow Dashboard Preview"
               width={1200}
               height={675}
               className="w-full h-auto"
