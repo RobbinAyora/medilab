@@ -23,7 +23,7 @@ export function Footer() {
                 <Activity className="w-6 h-6 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold text-foreground">
-                MedPlus<span className="text-primary">Tibaflow</span>
+              <span className="text-primary">Tibaflow</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground text-center md:text-left">
@@ -45,7 +45,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-border/50 text-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} MedPlusTibaflow. All rights
+            &copy; {new Date().getFullYear()} Tibaflow. All rights
             reserved.
           </p>
         </div>

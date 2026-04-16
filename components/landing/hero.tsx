@@ -32,8 +32,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance"
         >
-          TibaFlow
-          <span className="text-primary">Tibaflow</span>
+       
+          <span className="text-primary">tibaflow</span>
         </motion.h1>
 
         <motion.p

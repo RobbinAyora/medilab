@@ -44,7 +44,7 @@ export function Header() {
               <Activity className="w-6 h-6 text-primary-foreground" />
             </div>
             <span className="text-xl font-bold text-foreground">
-             <span className="text-primary">Tibaflow</span>
+             Tibaflow
             </span>
           </Link>
 
