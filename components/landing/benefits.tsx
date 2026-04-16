@@ -65,46 +65,83 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section id="benefits" className="py-24 px-4 bg-secondary/30">
+    <section id="benefits" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30 scroll-mt-nav">
       <div className="max-w-7xl mx-auto">
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Key Benefits
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Transform your healthcare facility with measurable improvements
-            across every department.
+          <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
+            Measurable impact across your entire facility.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300"
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="
+                group 
+                relative 
+                p-4 sm:p-6 
+                rounded-xl 
+                bg-card 
+                border border-border/50
+                hover:shadow-lg 
+                hover:-translate-y-1
+                transition-all duration-300
+                cursor-default
+              "
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <benefit.icon className="w-7 h-7 text-primary" />
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
+                <benefit.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+
+              <h3 className="text-sm font-semibold text-foreground mb-1">
                 {benefit.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
+
+              <p className="text-xs text-muted-foreground leading-relaxed">
                 {benefit.description}
               </p>
+
+              <div className="
+                absolute inset-0 
+                p-4 sm:p-6 
+                rounded-xl 
+                bg-card/98 
+                backdrop-blur-sm
+                border 
+                opacity-0 
+                group-hover:opacity-100 
+                group-focus-within:opacity-100
+                transition duration-300
+                flex flex-col justify-center
+                pointer-events-none group-hover:pointer-events-auto
+              ">
+                <h3 className="text-sm font-semibold text-foreground mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

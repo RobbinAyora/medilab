@@ -30,39 +30,40 @@ const infraTech = [
 
 export function TechStack() {
   return (
-    <section id="technology" className="py-24 px-4">
+    <section id="technology" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-nav">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
             Modern Technology Stack
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
             Built with industry-leading technologies for performance,
             scalability, and developer experience.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative order-1 lg:order-2"
           >
-            <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-card">
               <Image
                 src="/images/analytics-dashboar.jpg"
                 alt="Analytics Dashboard"
                 width={800}
                 height={600}
                 className="w-full h-auto"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </motion.div>
@@ -70,16 +71,16 @@ export function TechStack() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="space-y-6 sm:space-y-8 order-2 lg:order-1"
           >
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-primary" />
                 Backend
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {backendTech.map((tech) => (
                   <div
                     key={tech.name}
@@ -93,11 +94,11 @@ export function TechStack() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent" />
                 Frontend
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {frontendTech.map((tech) => (
                   <div
                     key={tech.name}
@@ -111,11 +112,11 @@ export function TechStack() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-chart-3" />
                 Infrastructure
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {infraTech.map((tech) => (
                   <div
                     key={tech.name}

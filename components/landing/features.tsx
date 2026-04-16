@@ -14,108 +14,58 @@ import {
   Shield,
 } from "lucide-react";
 
+// Feature data
 const features = [
-  {
-    icon: Users,
-    title: "Patient Management",
-    description:
-      "Complete EMR with full medical history, allergy tracking, document management, and patient portal for self-registration.",
-  },
-  {
-    icon: Calendar,
-    title: "Smart Scheduling",
-    description:
-      "Online appointment booking, real-time patient queue, walk-in registration, and no-show tracking.",
-  },
-  {
-    icon: Stethoscope,
-    title: "Clinical Workflows",
-    description:
-      "End-to-end workflows from triage to discharge, including consultations, surgeries, and recovery management.",
-  },
-  {
-    icon: CreditCard,
-    title: "Billing & Finance",
-    description:
-      "Automated invoicing, payment tracking, revenue reports, and comprehensive financial dashboard.",
-  },
-  {
-    icon: Package,
-    title: "Inventory Management",
-    description:
-      "Real-time stock tracking, low-stock alerts, surgical allocations, and complete audit trails.",
-  },
-  {
-    icon: Bell,
-    title: "Real-Time Notifications",
-    description:
-      "WebSocket-powered instant alerts, read/unread tracking, and user-specific preferences.",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Audit & Compliance",
-    description:
-      "Complete audit logging, entity-level tracking, patient activity history, and exportable reports.",
-  },
-  {
-    icon: BarChart3,
-    title: "Reports & Analytics",
-    description:
-      "Patient volume analytics, surgical outcomes, revenue reports, and theater utilization rates.",
-  },
-  {
-    icon: Building2,
-    title: "Facility Management",
-    description:
-      "Room management, bed availability tracking, ward occupancy rates, and status monitoring.",
-  },
-  {
-    icon: Shield,
-    title: "User Management",
-    description:
-      "Role-based access control, staff categorization, secure authentication, and password management.",
-  },
+  { icon: Users, title: "Patient Management", short: "Full EMR & history" },
+  { icon: Calendar, title: "Smart Scheduling", short: "Book, queue, track" },
+  { icon: Stethoscope, title: "Clinical Workflows", short: "Triage to discharge" },
+  { icon: CreditCard, title: "Billing & Finance", short: "Invoicing & revenue" },
+  { icon: Package, title: "Inventory", short: "Stock & alerts" },
+  { icon: Bell, title: "Notifications", short: "Real-time alerts" },
+  { icon: BarChart3, title: "Analytics", short: "Reports & insights" },
+  { icon: Shield, title: "Security", short: "RBAC & auth" },
 ];
-
+// Animations
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
 export function Features() {
   return (
-    <section id="features" className="py-24 px-4">
+    <section id="features" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-nav">
       <div className="max-w-7xl mx-auto">
+
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-4"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Comprehensive Feature Set
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Everything you need to run a modern healthcare facility, integrated
-            into one powerful platform.
+          <div>
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 opacity-70">
+              Platform
+            </p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+              Built for modern healthcare.
+            </h2>
+          </div>
+
+          <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
+            One unified system for operations, care, and growth.
           </p>
         </motion.div>
 
@@ -123,25 +73,40 @@ export function Features() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          viewport={{ once: true, margin: "-80px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
         >
           {features.map((feature) => (
             <motion.div
               key={feature.title}
               variants={itemVariants}
-              className="group relative p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
+              className="
+                group 
+                bg-card 
+                border border-border/50 
+                rounded-xl 
+                p-4 sm:p-6 
+                flex flex-col gap-3 sm:gap-4
+                hover:shadow-lg 
+                hover:-translate-y-1
+                transition-all duration-300
+              "
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <feature.icon className="w-6 h-6 text-primary" />
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition">
+                <feature.icon className="w-4 h-4 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
+
+              <h3 className="text-sm font-semibold text-foreground">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                {feature.short}
+              </p>
             </motion.div>
           ))}
         </motion.div>
+
       </div>
     </section>
   );

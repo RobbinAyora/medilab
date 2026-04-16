@@ -42,25 +42,25 @@ const roles = [
 
 export function Roles() {
   return (
-    <section className="py-24 px-4">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
             Role-Based Access Control
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
             Secure, granular permissions ensure every team member has access to
             exactly what they need.
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           {roles.map((item, index) => (
             <motion.div
               key={item.role}
@@ -68,14 +68,14 @@ export function Roles() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="w-full sm:w-64 p-6 rounded-2xl bg-card border border-border/50 text-center hover:border-primary/50 transition-all duration-300"
+              className="w-full sm:w-56 lg:w-64 p-5 sm:p-6 rounded-2xl bg-card border border-border/50 text-center hover:border-primary/50 hover:shadow-lg transition-all duration-300"
             >
               <div
-                className={`w-16 h-16 rounded-full ${item.color} flex items-center justify-center mx-auto mb-4`}
+                className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full ${item.color} flex items-center justify-center mx-auto mb-4`}
               >
-                <item.icon className="w-8 h-8 text-background" />
+                <item.icon className="w-7 h-7 sm:w-8 sm:h-8 text-background" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">
                 {item.role}
               </h3>
               <p className="text-sm text-muted-foreground">{item.description}</p>
