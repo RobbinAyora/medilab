@@ -58,7 +58,7 @@ export function TechStack() {
           >
             <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl">
               <Image
-                src="/images/analytics-dashboard.jpg"
+                src="/images/analytics-dashboar.jpg"
                 alt="Analytics Dashboard"
                 width={800}
                 height={600}

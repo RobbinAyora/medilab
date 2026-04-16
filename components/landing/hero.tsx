@@ -32,7 +32,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance"
         >
-          MedPlus
+          TibaFlow
           <span className="text-primary">Tibaflow</span>
         </motion.h1>
 
