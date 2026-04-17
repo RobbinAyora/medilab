@@ -4,33 +4,15 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const backendTech = [
-  { name: "NestJS", desc: "Enterprise Node.js framework" },
-  { name: "PostgreSQL", desc: "ACID-compliant database" },
-  { name: "Redis", desc: "High-performance caching" },
-  { name: "TypeORM", desc: "Type-safe database operations" },
-  { name: "JWT", desc: "Secure authentication" },
-  { name: "WebSockets", desc: "Real-time communication" },
-];
-
-const frontendTech = [
-  { name: "React 18", desc: "Type-safe UI development" },
-  { name: "Vite", desc: "Lightning-fast builds" },
-  { name: "Tailwind CSS", desc: "Modern responsive styling" },
-  { name: "Zustand", desc: "Lightweight state management" },
-  { name: "TanStack Query", desc: "Server state management" },
-  { name: "React Hook Form", desc: "Performant form handling" },
-];
-
-const infraTech = [
-  { name: "Docker", desc: "Containerized deployment" },
-  { name: "MinIO", desc: "S3-compatible storage" },
-  { name: "Nginx", desc: "Reverse proxy & load balancing" },
-  { name: "pgAdmin", desc: "Database administration" },
+  { name: "Charge Sheets", desc: "Support services and inventory across all care phases" },
+  { name: "Price Overrides", desc: "Per-charge-sheet overrides without affecting master catalog" },
+  { name: "Theater Fee Engine", desc: "Server-side computation based on booking duration and pricing config" },
+  { name: "Inventory Tracking", desc: "Reconciled against planned and actual procedure usage" },
 ];
 
 export function TechStack() {
   return (
-    <section id="technology" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-nav">
+    <section id="reliability" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-nav">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,11 +22,10 @@ export function TechStack() {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-            Modern Technology Stack
+            4. Billing & Inventory Integration
           </h2>
           <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Built with industry-leading technologies for performance,
-            scalability, and developer experience.
+            Financial and operational data stay consistent throughout the care journey without constraining clinical flexibility.
           </p>
         </motion.div>
 
@@ -76,48 +57,11 @@ export function TechStack() {
             className="space-y-6 sm:space-y-8 order-2 lg:order-1"
           >
             <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                Backend
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">
+                Tibaflow achieves this through
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {backendTech.map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="p-3 rounded-lg bg-card border border-border/50"
-                  >
-                    <p className="font-medium text-foreground">{tech.name}</p>
-                    <p className="text-sm text-muted-foreground">{tech.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-accent" />
-                Frontend
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {frontendTech.map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="p-3 rounded-lg bg-card border border-border/50"
-                  >
-                    <p className="font-medium text-foreground">{tech.name}</p>
-                    <p className="text-sm text-muted-foreground">{tech.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-chart-3" />
-                Infrastructure
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {infraTech.map((tech) => (
                   <div
                     key={tech.name}
                     className="p-3 rounded-lg bg-card border border-border/50"

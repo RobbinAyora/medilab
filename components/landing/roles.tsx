@@ -1,48 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Stethoscope, UserCog, Headset, Wrench } from "lucide-react";
 
 const roles = [
   {
-    icon: ShieldCheck,
-    role: "Admin",
+    role: "Clinical Gates",
     description:
-      "Full system access, user management, audit logs, system configuration",
-    color: "bg-chart-1",
+      "Ward checklist finalization and other clinical gates determine downstream scheduling eligibility and enforce readiness before progression.",
   },
   {
-    icon: Stethoscope,
-    role: "Doctor",
+    role: "Case Membership Controls",
     description:
-      "Patient consultations, surgeries, prescriptions, medical records",
-    color: "bg-chart-2",
+      "Access to sensitive clinical documentation is governed through strict case membership controls, ensuring only authorized personnel interact with patient data.",
   },
   {
-    icon: UserCog,
-    role: "Nurse",
+    role: "UI Safeguards",
     description:
-      "Triage, patient care, medication administration, observations",
-    color: "bg-chart-3",
+      "Prevents missed saves on critical steps such as charge sheet updates, ensuring that user actions are reliably captured and persisted.",
   },
   {
-    icon: Headset,
-    role: "Front Desk",
+    role: "Status Transitions",
     description:
-      "Patient registration, appointments, queue management, billing support",
-    color: "bg-chart-4",
+      "Meaningful status changes trigger visible and enforceable downstream effects across the workflow, maintaining system integrity.",
   },
   {
-    icon: Wrench,
-    role: "Theater Tech",
-    description: "Theater scheduling support, equipment management",
-    color: "bg-chart-5",
+    role: "System Integrity",
+    description:
+      "Eliminates 'UI-only state' by ensuring all confirmed actions are validated and completed at the system level, not just visually represented.",
   },
 ];
 
 export function Roles() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <section id="roles" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -52,11 +42,10 @@ export function Roles() {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-            Role-Based Access Control
+            5. Workflow Safety & Reliability
           </h2>
           <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Secure, granular permissions ensure every team member has access to
-            exactly what they need.
+            Tibaflow is built to prevent 'UI-only state' — conditions where the interface appears to confirm an action that the system has not actually completed.
           </p>
         </motion.div>
 
@@ -70,11 +59,6 @@ export function Roles() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="w-full sm:w-56 lg:w-64 p-5 sm:p-6 rounded-2xl bg-card border border-border/50 text-center hover:border-primary/50 hover:shadow-lg transition-all duration-300"
             >
-              <div
-                className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full ${item.color} flex items-center justify-center mx-auto mb-4`}
-              >
-                <item.icon className="w-7 h-7 sm:w-8 sm:h-8 text-background" />
-              </div>
               <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">
                 {item.role}
               </h3>

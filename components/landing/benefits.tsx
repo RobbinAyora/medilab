@@ -1,71 +1,53 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Workflow,
-  Clock,
-  ShieldCheck,
-  Heart,
-  LineChart,
-  Scale,
-  Lock,
-  Zap,
-} from "lucide-react";
 
 const benefits = [
   {
-    icon: Workflow,
-    title: "End-to-End Patient Journey",
+    title: "Clear Role Separation",
     description:
-      "Complete digitization from registration to discharge eliminates paper-based processes and manual handoffs.",
+      "Each staff role stays focused on their domain while contributing to a unified, case-centered care record.",
   },
   {
-    icon: Clock,
-    title: "Reduced Administrative Burden",
+    title: "Documentation Continuity",
     description:
-      "Automated billing, appointment reminders, and queue management free up staff time for patient care.",
+      "Every clinical event from consultation to discharge is captured in a single connected record.",
   },
   {
-    icon: ShieldCheck,
-    title: "Improved Patient Safety",
+    title: "Clinically-Anchored Scheduling",
     description:
-      "Digital allergies, medication tracking, and standardized workflows reduce medical errors.",
+      "Theater scheduling driven by clinical readiness — cases only enter booking queue when pre-op requirements are met.",
   },
   {
-    icon: Heart,
-    title: "Better Patient Experience",
+    title: "Accurate, Auditable Billing",
     description:
-      "Shorter wait times, transparent billing, coordinated care across departments.",
+      "Charges integrated at every care phase and computed server-side, reducing revenue leakage.",
   },
   {
-    icon: LineChart,
-    title: "Data-Driven Decisions",
+    title: "Flexible Documentation",
     description:
-      "Comprehensive reports and analytics provide insights for strategic planning.",
+      "Tools designed for real-world variability — structured where precision matters, freeform where essential.",
   },
   {
-    icon: Scale,
-    title: "Scalable Architecture",
+    title: "Scalable Configuration",
     description:
-      "Modern microservices-ready design grows with your facility.",
+      "Admin-controlled theater definitions, pricing configurations, and role governance adapt as needs evolve.",
   },
   {
-    icon: Lock,
-    title: "Enhanced Security",
+    title: "Workflow Safety",
     description:
-      "JWT authentication, role-based access, complete audit trails ensure compliance.",
+      "Clinical gates and case membership controls prevent UI-only state and ensure enforceable transitions.",
   },
   {
-    icon: Zap,
     title: "Real-Time Collaboration",
     description:
-      "WebSocket notifications keep all departments synchronized instantly.",
+      "Immediate notifications keep teams synchronized throughout the care journey.",
   },
 ];
 
 export function Benefits() {
   return (
-    <section id="benefits" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30 scroll-mt-nav">
+    <section id="why" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30 scroll-mt-nav">
       <div className="max-w-7xl mx-auto">
 
         <motion.div
@@ -76,10 +58,10 @@ export function Benefits() {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Key Benefits
+            Why Tibaflow Works
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-            Measurable impact across your entire facility.
+            Purpose-built for surgical and aesthetic centers.
           </p>
         </motion.div>
 
@@ -104,10 +86,6 @@ export function Benefits() {
                 cursor-default
               "
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition">
-                <benefit.icon className="w-5 h-5 text-primary" />
-              </div>
-
               <h3 className="text-sm font-semibold text-foreground mb-1">
                 {benefit.title}
               </h3>
@@ -116,27 +94,7 @@ export function Benefits() {
                 {benefit.description}
               </p>
 
-              <div className="
-                absolute inset-0 
-                p-4 sm:p-6 
-                rounded-xl 
-                bg-card/98 
-                backdrop-blur-sm
-                border 
-                opacity-0 
-                group-hover:opacity-100 
-                group-focus-within:opacity-100
-                transition duration-300
-                flex flex-col justify-center
-                pointer-events-none group-hover:pointer-events-auto
-              ">
-                <h3 className="text-sm font-semibold text-foreground mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
+              
 
             </motion.div>
           ))}

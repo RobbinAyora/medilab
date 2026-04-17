@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export function CTA() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+    <section id="promise" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -20,13 +20,17 @@ export function CTA() {
 
           <div className="relative z-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-              Ready to Transform Your Facility?
+              The Tibaflow Promise
             </h2>
-            <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-8 text-pretty">
-              Tibaflow is designed for hospitals, clinics, and healthcare
-              facilities of all sizes. Whether you are a small clinic or a large
-              hospital, our platform scales to meet your needs.
-            </p>
+            <div className="text-sm sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-8 text-pretty">
+              Tibaflow helps surgical and aesthetic centers operate as a single coordinated team:
+              <ul className="mt-4 text-left space-y-2 list-disc list-inside">
+                <li>Patients move smoothly from intake to consultation, to surgery, to discharge</li>
+                <li>Staff roles remain focused — but data remains unified across every touchpoint</li>
+                <li>Documentation, scheduling, inventory, and billing stay aligned throughout the care journey</li>
+                <li>Workflow transitions are clear, enforceable, and operationally meaningful</li>
+              </ul>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button size="lg" className="gap-2 text-base w-full sm:w-auto">

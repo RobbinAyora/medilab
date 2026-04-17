@@ -18,20 +18,47 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6"
           >
-            Modern Healthcare,
-            <span className="block text-primary mt-2">Simplified</span>
+            Tibaflow
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0"
+            className="text-base sm:text-lg text-muted-foreground mb-4 sm:mb-6 max-w-xl mx-auto lg:mx-0"
           >
-            Tibaflow helps healthcare facilities streamline operations,
-            improve patient care, and scale efficiently with a clean,
-            powerful digital system.
+            Tibaflow is a role-based clinical operations system purpose-built for surgical and aesthetic centers. It connects patient intake, consultation workflows, surgical planning, theater scheduling, clinical documentation, billing, and inventory into a single cohesive care journey.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
+            className="text-sm text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8"
+          >
+            The platform is designed to:
+            <ul className="mt-2 space-y-1 text-left">
+              <li>• Reduce operational friction across all care touchpoints</li>
+              <li>• Enforce safe, clinically-gated workflow transitions</li>
+              <li>• Keep documentation and charges precisely aligned with clinical events</li>
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+            className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start mb-6 sm:mb-8"
+          >
+            {["Intake & Scheduling", "Clinical Documentation", "Theater Management", "Billing & Inventory"].map((tag) => (
+              <span
+                key={tag}
+                className="text-xs sm:text-sm px-3 py-1 rounded-full bg-secondary text-muted-foreground"
+              >
+                {tag}
+              </span>
+            ))}
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -7,10 +7,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#features", label: "Features" },
-  { href: "#workflows", label: "Workflows" },
-  { href: "#technology", label: "Technology" },
-  { href: "#benefits", label: "Benefits" },
+  { href: "#billing", label: "Roles" },
+  { href: "#care", label: "Care" },
+  { href: "#reliability", label: "Billing" },
+  { href: "#why", label: "Why" },
+  { href: "#roles", label: "Reliability" },
+  { href: "#promise", label: "Promise" },
 ];
 
 export function Header() {

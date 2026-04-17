@@ -1,29 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Users,
-  Calendar,
-  Stethoscope,
-  CreditCard,
-  Package,
-  Bell,
-  ClipboardCheck,
-  BarChart3,
-  Building2,
-  Shield,
-} from "lucide-react";
 
 // Feature data
 const features = [
-  { icon: Users, title: "Patient Management", short: "Full EMR & history" },
-  { icon: Calendar, title: "Smart Scheduling", short: "Book, queue, track" },
-  { icon: Stethoscope, title: "Clinical Workflows", short: "Triage to discharge" },
-  { icon: CreditCard, title: "Billing & Finance", short: "Invoicing & revenue" },
-  { icon: Package, title: "Inventory", short: "Stock & alerts" },
-  { icon: Bell, title: "Notifications", short: "Real-time alerts" },
-  { icon: BarChart3, title: "Analytics", short: "Reports & insights" },
-  { icon: Shield, title: "Security", short: "RBAC & auth" },
+  { title: "Frontdesk", short: "Registers and manages patients during intake;" },
+  { title: "Doctor", short: "Receives queue updates" },
+  { title: "Manages perioperative clinical workflow and documentation;" },
+  { title: "Theatre technician", short: "Plans and operationalizes surgical cases" },
+  { title: "Admin", short: "Manages system configuration and governance; " },
 ];
 // Animations
 const containerVariants = {
@@ -45,7 +30,7 @@ const itemVariants = {
 
 export function Features() {
   return (
-    <section id="features" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-nav">
+    <section id="billing" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-nav">
       <div className="max-w-7xl mx-auto">
 
         <motion.div
@@ -57,15 +42,15 @@ export function Features() {
         >
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3 opacity-70">
-              Platform
+              Core Roles & Responsibilities
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-              Built for modern healthcare.
+             Tibaflow is structured around five distinct roles.
             </h2>
           </div>
 
           <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-            One unified system for operations, care, and growth.
+            Connecting the complete care process.
           </p>
         </motion.div>
 
@@ -85,22 +70,18 @@ export function Features() {
                 bg-card 
                 border border-border/50 
                 rounded-xl 
-                p-4 sm:p-6 
-                flex flex-col gap-3 sm:gap-4
+                p-6 sm:p-8 
+                flex flex-col gap-4
                 hover:shadow-lg 
                 hover:-translate-y-1
                 transition-all duration-300
               "
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition">
-                <feature.icon className="w-4 h-4 text-primary" />
-              </div>
-
-              <h3 className="text-sm font-semibold text-foreground">
+              <h3 className="text-lg font-semibold text-foreground">
                 {feature.title}
               </h3>
 
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {feature.short}
               </p>
             </motion.div>
